@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>customer-support-ticket-system</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+ <style>
+    body { background:#f3f4f6; }
+    .gradient-purple {
+      background: linear-gradient(135deg,#7c3aed,#a78bfa);
+    }
+    .gradient-green {
+      background: linear-gradient(135deg,#22c55e,#059669);
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+<!-- NAVBAR -->
+<div class="navbar bg-white shadow-sm px-4 md:px-8">
+  <div class="flex-1">
+    <a class="text-lg font-semibold">CS — Ticket System</a>
+  </div>
+
+  <!-- Desktop Menu -->
+  <div class="hidden md:flex gap-6 text-sm items-center">
+    <a>Home</a>
+    <a>FAQ</a>
+    <a>Changelog</a>
+    <a>Blog</a>
+    <a>Download</a>
+    <a>Contact</a>
+    <button class="btn btn-primary btn-sm">+ New Ticket</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="dropdown dropdown-end md:hidden">
+    <label tabindex="0" class="btn btn-ghost btn-circle">
+      ☰
+    </label>
+    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+      <li><a>Home</a></li>
+      <li><a>FAQ</a></li>
+      <li><a>Changelog</a></li>
+      <li><a>Blog</a></li>
+      <li><a>Download</a></li>
+      <li><a>Contact</a></li>
+      <li><button class="btn btn-primary btn-sm mt-2">+ New Ticket</button></li>
+    </ul>
+  </div>
+</div>
+
+<!-- MAIN CONTAINER -->
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-6 py-6">
+
+  <!-- STATUS CARDS -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <div class="gradient-purple text-white rounded-xl p-8 text-center">
+      <p class="opacity-90">In-Progress</p>
+      <h2 class="text-5xl font-bold">0</h2>
+    </div>
+
+    <div class="gradient-green text-white rounded-xl p-8 text-center">
+      <p class="opacity-90">Resolved</p>
+      <h2 class="text-5xl font-bold">0</h2>
+    </div>
+  </div>
+
+  <!-- CONTENT GRID -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- CUSTOMER TICKETS -->
+    <div class="lg:col-span-2">
+      <h2 class="font-semibold mb-4">Customer Tickets</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <!-- CARD -->
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Login Issues - Can't Access Account</h3>
+            <span class="badge badge-success">Open</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Customer is unable to log into their account.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1001 HIGH PRIORITY</span>
+            <span>1/15/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Payment Failed - Card Declined</h3>
+            <span class="badge badge-success">Open</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Payment attempt declined using Visa ending 1234.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1002 HIGH PRIORITY</span>
+            <span>1/16/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Unable to Download Invoice</h3>
+            <span class="badge badge-warning">In Progress</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Customer cannot download their invoice.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1003 MEDIUM PRIORITY</span>
+            <span>1/17/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Incorrect Billing Address</h3>
+            <span class="badge badge-success">Open</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Billing address shows wrong details.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1004 LOW PRIORITY</span>
+            <span>1/18/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">App Crash on Launch</h3>
+            <span class="badge badge-success">Open</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Application crashes immediately after opening.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1005 HIGH PRIORITY</span>
+            <span>1/19/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Refund Not Processed</h3>
+            <span class="badge badge-warning">In Progress</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Refund requested but not received.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1006 MEDIUM PRIORITY</span>
+            <span>1/20/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Two-Factor Authentication Issue</h3>
+            <span class="badge badge-success">Open</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">User not receiving 2FA codes.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1007 HIGH PRIORITY</span>
+            <span>1/21/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Unable to Update Profile Picture</h3>
+            <span class="badge badge-success">Open</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Upload fails while updating profile image.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1008 LOW PRIORITY</span>
+            <span>1/22/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Subscription Auto-Renewal</h3>
+            <span class="badge badge-warning">In Progress</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Auto-renewal settings not working.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1009 MEDIUM PRIORITY</span>
+            <span>1/23/2024</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+          <div class="flex flex-wrap gap-2 justify-between items-start">
+            <h3 class="font-semibold">Missing Order Confirmation Email</h3>
+            <span class="badge badge-success">Open</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">Order placed but confirmation not received.</p>
+          <div class="flex justify-between text-xs mt-3 text-gray-400">
+            <span>#1010 MEDIUM PRIORITY</span>
+            <span>1/24/2024</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TASK STATUS -->
+    <div>
+      <h2 class="font-semibold mb-4">Task Status</h2>
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <h3 class="font-semibold">Resolved Task</h3>
+        <p class="text-gray-500 text-sm mt-2">No resolved tasks yet.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 mt-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 px-6 py-10 text-sm">
+
+    <div>
+      <h3 class="font-semibold text-white mb-2">CS — Ticket System</h3>
+      <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white mb-2">Company</h4>
+      <ul class="space-y-1">
+        <li>About Us</li>
+        <li>Our Mission</li>
+        <li>Contact Sales</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white mb-2">Services</h4>
+      <ul class="space-y-1">
+        <li>Products & Services</li>
+        <li>Customer Stories</li>
+        <li>Download Apps</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white mb-2">Information</h4>
+      <ul class="space-y-1">
+        <li>Privacy Policy</li>
+        <li>Terms & Conditions</li>
+        <li>Join Us</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white mb-2">Social Links</h4>
+      <ul class="space-y-1">
+        <li>@CS — Ticket System</li>
+        <li>@CS — Ticket System</li>
+        <li>support@cs.com</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="text-center text-xs pb-4">© 2026 CS — Ticket System. All rights reserved.</div>
+</footer>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
