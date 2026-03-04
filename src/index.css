@@ -2,10 +2,4 @@ body {
   background: #f3f4f6;
 }
 
-.gradient-purple {
-  background: linear-gradient(135deg,#7c3aed,#a78bfa);
-}
 
-.gradient-green {
-  background: linear-gradient(135deg,#22c55e,#059669);
-}

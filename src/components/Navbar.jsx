@@ -43,7 +43,7 @@ export default function Navbar() {
             <li><a>Contact</a></li>
 
             <li class="mt-2">
-              <button class="btn btn-primary btn-sm w-full">
+              <button class=" bg-[#135deg,#7c3aed,#a78bfa] btn btn-primary btn-sm w-full">
                 + New Ticket
               </button>
             </li>
