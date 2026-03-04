@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import ticketsData from "./data/tickets";
+import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
+import TicketList from "./components/TicketList";
+import TaskStatus from "./components/TaskStatus";
+import Footer from "./components/Footer";
+import { toast } from "react-toastify";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App(){
+
+  const [tickets,setTickets]=useState(ticketsData);
+  const [inProgress,setInProgress]=useState([]);
+  const [resolved,setResolved]=useState([]);
+
+  const addTask=(ticket)=>{
+    if(inProgress.find(t=>t.id===ticket.id)) return;
+
+    setInProgress([...inProgress,ticket]);
+    toast.success("Ticket added to Task Status");
+  };
+
+  const completeTask=(ticket)=>{
+    setInProgress(inProgress.filter(t=>t.id!==ticket.id));
+    setResolved([...resolved,ticket]);
+    setTickets(tickets.filter(t=>t.id!==ticket.id));
+
+    toast.success("Task completed successfully");
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <Navbar />
 
-export default App
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+
+        <Banner
+          inProgressCount={inProgress.length}
+          resolvedCount={resolved.length}
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          <TicketList
+            tickets={tickets}
+            onSelect={addTask}
+          />
+
+          <TaskStatus
+            tasks={inProgress}
+            onComplete={completeTask}
+          />
+
+        </div>
+
+      </div>
+
+      <Footer />
+    </>
+  );
+}
