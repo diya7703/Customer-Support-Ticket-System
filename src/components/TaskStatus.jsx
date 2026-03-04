@@ -1,9 +1,10 @@
+import logo from "../img/done.png";
 export default function TaskStatus({ tasks, resolved, onComplete }) {
   return (
     <div>
       <h2 className="text-lg font-semibold mb-3">Task Status</h2>
 
-      <div className="rounded-lg p-4 mb-6">
+      <div className="bg-white rounded-lg shadow p-4 mb-6">
         {tasks.length === 0 ? (
           <p className="text-sm text-gray-500">
             Select a ticket to add to Task Status
@@ -28,7 +29,7 @@ export default function TaskStatus({ tasks, resolved, onComplete }) {
       </div>
       <h2 className="text-lg font-semibold mb-3">Resolved Tasks</h2>
 
-      <div className=" rounded-lg p-4">
+      <div className="bg-white rounded-lg shadow p-4">
         {resolved.length === 0 ? (
           <p className="text-sm text-gray-500">
             No resolved tasks yet.
@@ -39,8 +40,8 @@ export default function TaskStatus({ tasks, resolved, onComplete }) {
               key={task.id}
               className="border rounded-lg p-3 mb-3"
             >
-              <p className="text-sm font-medium text-green-600">
-                ✔ {task.title}
+              <p className="flex text-sm font-medium text-green-600">
+                <img src={logo} className="w-4 h-4 gap-3"/>{task.title}
               </p>
             </div>
           ))
