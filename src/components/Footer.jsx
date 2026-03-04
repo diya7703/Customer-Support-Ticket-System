@@ -7,7 +7,7 @@ export default function Footer(){
           <h3 className="text-white mb-2 font-semibold">
             CS — Ticket System
           </h3>
-          <p>Lorem ipsum is simply dummy text.</p>
+          <p>A trusted customer support zone.</p>
         </div>
 
         <div>
