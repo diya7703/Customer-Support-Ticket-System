@@ -9,10 +9,7 @@ export default function TicketList({tickets,onSelect}){
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {tickets.map(ticket=>(
           <TicketCard
-            key={ticket.id}
-            ticket={ticket}
-            onClick={onSelect}
-          />
+            key={ticket.id} ticket={ticket} onClick={onSelect} />
         ))}
       </div>
     </div>

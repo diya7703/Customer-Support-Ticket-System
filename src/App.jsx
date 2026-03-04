@@ -12,7 +12,6 @@ export default function App() {
   const [inProgress, setInProgress] = useState([]);
   const [resolved, setResolved] = useState([]);
 
-  // ADD TO TASK STATUS
   const handleAddTask = (ticket) => {
     if (inProgress.find((t) => t.id === ticket.id)) {
       toast.info("Task already added!");
@@ -23,15 +22,11 @@ export default function App() {
     toast.success("Added to Task Status!");
   };
 
-  // COMPLETE TASK
   const handleComplete = (ticket) => {
-    // remove from in-progress
     setInProgress(inProgress.filter((t) => t.id !== ticket.id));
 
-    // remove from customer tickets
     setTickets(tickets.filter((t) => t.id !== ticket.id));
 
-    // add to resolved list
     setResolved([...resolved, ticket]);
 
     toast.success("Task Completed!");

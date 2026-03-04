@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <div className="navbar bg-white shadow-sm px-4 md:px-8">
+    <div className="navbar bg-white  px-4 md:px-8">
       <div className="flex-1">
         <a className="text-lg font-semibold">CS — Ticket System</a>
       </div>
